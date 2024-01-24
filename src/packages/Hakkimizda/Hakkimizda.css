@@ -1,0 +1,67 @@
+.container-md .row .GithubCol {
+  display: flex;
+  align-items: start;
+  justify-content: space-evenly;
+  margin-top: -10rem !important;
+}
+@media screen and (max-width: 516px) {
+  .container-md .row .GithubCol {
+    display: inline-block;
+    margin-top: -10rem !important;
+  }
+}
+.container-md .row .GithubCol .ContactDiv {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+  padding: 2rem;
+  text-shadow: 2px -1px 0 rgb(125, 125, 125);
+}
+.container-md .row .GithubCol .ContactDiv .Icon-1 {
+  font-size: 60px;
+}
+.container-md .row .GithubCol .ContactDiv .Icon-2 {
+  font-size: 60px;
+}
+.container-md .row .GithubCol .ContactDiv .Icon-3 {
+  font-size: 60px;
+}
+@media screen and (max-width: 516px) {
+  .container-md .row {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.container-md .row .description-col {
+  margin-top: 10rem;
+  max-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+}
+@media screen and (max-width: 516px) {
+  .container-md .row .description-col {
+    margin-top: 15rem;
+    padding: 3rem;
+  }
+}
+.container-md .row .description-col div h4,
+.container-md .row .description-col div p,
+.container-md .row .description-col div h2 {
+  text-shadow: 3px 1px 0 rgb(200, 200, 200);
+}
+@media screen and (max-width: 516px) {
+  .container-md .row .description-col div h4,
+  .container-md .row .description-col div p,
+  .container-md .row .description-col div h2 {
+    text-align: center !important;
+  }
+}
+@media screen and (max-width: 516px) {
+  .container-md .row .description-col-2 {
+    margin-top: 7rem !important;
+    margin-bottom: 7rem !important;
+  }
+}/*# sourceMappingURL=Hakkimizda.css.map */

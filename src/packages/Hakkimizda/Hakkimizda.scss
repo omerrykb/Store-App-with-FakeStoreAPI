@@ -1,0 +1,89 @@
+.container-md {
+    .row {
+
+
+        .GithubCol {
+            display: flex;
+            align-items: start;
+            justify-content: space-evenly;
+            @media screen  and (max-width:516px){
+                display: inline-block;
+                margin-top: -10rem !important;
+            }
+            margin-top: -10rem !important;
+
+            .ContactDiv {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: start;
+                padding: 2rem;
+                text-shadow: 2px -1px 0 rgb(125, 125, 125);
+
+
+                
+
+                .Icon-1 {
+                    font-size: 60px;
+
+                }
+
+                .Icon-2 {
+                    font-size: 60px;
+
+                }
+
+                .Icon-3 {
+                    font-size: 60px;
+
+                }
+            }
+        }
+    }
+
+    .row {
+
+        @media screen and (max-width:516px) {
+           display: flex;
+           flex-direction: column;
+        }
+
+        .description-col {
+            margin-top: 10rem;
+            max-height: 10vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: end;
+            @media screen  and (max-width:516px){
+                margin-top: 15rem;
+                padding: 3rem;
+                
+                
+            }
+
+            div {
+                h4,
+                p,
+                h2 {
+                    text-shadow: 3px 1px 0 rgb(200, 200, 200);
+                    @media screen and (max-width:516px) {
+                        text-align: center !important;
+                       
+                    }
+                    
+                }
+              
+                
+            }
+        }
+        .description-col-2{
+            @media screen and (max-width:516px) {
+                margin-top: 7rem !important;
+                margin-bottom: 7rem !important;
+               
+            }
+        }
+
+    }
+}

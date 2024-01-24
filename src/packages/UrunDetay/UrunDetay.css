@@ -1,0 +1,60 @@
+.container-md .row {
+  min-height: 70vh;
+  padding: 2rem;
+  border-radius: 10px;
+}
+.container-md .row .col-md-4 {
+  padding: 1rem;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container-md .row .col-md-4 * {
+  padding: 1rem;
+}
+.container-md .row .col-md-4 .card-header {
+  margin: 4rem 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.5rem;
+}
+.container-md .row .col-md-4 .card-header img {
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 90%;
+  padding: 1.2rem;
+}
+.container-md .row .col-md-4 .card-body .card-title {
+  font-size: 25px;
+}
+.container-md .row .col-md-4 .card-body .card-text {
+  color: rgb(69, 69, 69);
+}
+.container-md .row .col-md-4 .card-body .fiyat {
+  color: #101010;
+  font-size: 22px;
+  text-shadow: 2px 1px 0 rgb(210, 210, 210);
+}
+.container-md .row .col-md-4 .card-footer {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.container-md .row .col-md-4 .card-footer button {
+  width: 100%;
+}
+.container-md .row .col-md-4 .card-footer button:hover * {
+  transition: all 0.2s !important;
+  color: white;
+}
+.container-md .row .col-md-4 .card-footer button .Icon-1 {
+  padding: 0;
+  font-size: 22px;
+}
+.container-md .row .col-md-4 .card-footer button .Icon-2 {
+  padding: 0;
+}/*# sourceMappingURL=UrunDetay.css.map */
