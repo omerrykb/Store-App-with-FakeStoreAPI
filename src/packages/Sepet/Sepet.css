@@ -1,1 +1,29 @@
-/*# sourceMappingURL=Sepet.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap");
+@media screen and (max-width: 800px) {
+  .container-md .row {
+    min-height: 80vh;
+  }
+}
+.container-md .row h1 {
+  font-family: "Rubik Burned", system-ui;
+  width: 100%;
+  text-shadow: 0px 2px 0 rgb(0, 0, 0);
+}
+.container-md .row .col-md-3 .card {
+  border-radius: 1rem;
+}
+.container-md .row .col-md-3 .card .sepet-card-header {
+  width: 50%;
+}
+.container-md .row .col-md-3 .card .sepet-card-header .myImg {
+  max-width: 100%;
+}
+.container-md .row .col-md-3 .card .card-body .card-title {
+  font-size: 20px;
+}
+.container-md .row .col-md-3 .card .card-footer {
+  border-radius: 1rem;
+}
+.container-md .row .col-md-3 .card .card-footer .card-text {
+  width: 100%;
+}/*# sourceMappingURL=Sepet.css.map */

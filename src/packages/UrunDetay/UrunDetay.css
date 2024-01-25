@@ -57,4 +57,7 @@
 }
 .container-md .row .col-md-4 .card-footer button .Icon-2 {
   padding: 0;
+}
+.container-md .row .col-md-4 .tiklamaAnimasyonu {
+  transition: all 0.2s;
 }/*# sourceMappingURL=UrunDetay.css.map */

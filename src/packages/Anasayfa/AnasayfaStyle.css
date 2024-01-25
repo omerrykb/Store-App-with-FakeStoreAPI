@@ -43,7 +43,7 @@
   -webkit-line-clamp: 2;
 }
 .container-md .row .col-md-3 .card .card-body .description {
-  color: rgb(82, 82, 82);
+  color: rgb(82, 82, 83);
   font-size: 14px;
   overflow: hidden;
   display: -webkit-box;
@@ -59,4 +59,7 @@
 }
 .container-md .row .col-md-3 .card .card-footer a button {
   width: 100%;
+}
+.container-md .row .col-md-3 .card .card-footer .tiklamaAnimasyonu {
+  transition: all 0.2s;
 }/*# sourceMappingURL=AnasayfaStyle.css.map */

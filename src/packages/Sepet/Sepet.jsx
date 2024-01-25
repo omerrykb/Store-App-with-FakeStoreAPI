@@ -48,7 +48,7 @@ function Sepet({ sepet, setSepet }) {
             <Col md={3} >
               <Card className='border-2 border-warning-subtle shadow bg-light'>
                 <Card.Header className='shadow bg-white sepet-card-header'>
-                  <img className='myImg' src={urun.image} alt="" />
+                <Link to={`/products/${urun.id}`} className='text-decoration-none text-reset'><img className='myImg' src={urun.image} alt="" /></Link>
                 </Card.Header>
                 <Card.Body>
                   <Card.Title className='text-center fw-bold'>{urun.title}</Card.Title>
@@ -57,8 +57,8 @@ function Sepet({ sepet, setSepet }) {
                   <Card.Text className='text-center fw-bold fiyatlar'>{((urun.price) * 11 * (urun.amount)).toFixed(2)}₺</Card.Text>
                   <Card.Text className='text-center fw-medium'>{"x" + (urun.amount)}</Card.Text>
                   <div className="adet rounded-pill border border-2 border-warning-subtle shadow p-1 d-flex justify-content-center align-items-center ">
-                    <button className='btn btn-outline-warning shadow mx-1' onClick={() => adetEksilt(urun)}>-</button>
-                    <button className='btn btn-outline-warning shadow mx-1' id={`adetArttirBtnId-${urun.id}`} onClick={() => adetArttir(urun)}>+</button>
+                    <button className='btn btn-outline-warning shadow mx-1 fw-bold' onClick={() => adetEksilt(urun)}>-</button>
+                    <button className='btn btn-outline-warning shadow mx-1 fw-bold' id={`adetArttirBtnId-${urun.id}`} onClick={() => adetArttir(urun)}>+</button>
                   </div>
                 </Card.Footer>
               </Card>

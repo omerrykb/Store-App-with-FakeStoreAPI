@@ -46,7 +46,7 @@ function App() {
             </Nav>
           </Navbar.Collapse>
           <Link to={"/Sepet"} className='m-auto text-decoration-none text-reset me-4' >
-            <div className="sepet bg-body-secondary me-5 shadow"><GrBasket /></div>
+            <div className="sepet bg-body-secondary me-5 shadow"><GrBasket /><div className="sepetGosterge shadow ">{sepet.length}</div></div>
 
           </Link>
         </Container>

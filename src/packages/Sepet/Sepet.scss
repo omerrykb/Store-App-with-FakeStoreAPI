@@ -17,9 +17,13 @@
                 border-radius: 1rem;
                 .sepet-card-header{
                     width: 50%;
-                    .myImg{
-                        max-width: 100%;
+                    a{
+                        width: 100%;
                         
+                        .myImg{
+                            max-width: 100%;
+                            
+                        }
                     }
                 }
                 .card-body{
@@ -31,6 +35,11 @@
                     border-radius: 1rem;
                     .card-text{
                         width: 100%;
+                    }
+                    .adet{
+                        button{
+                            width: 20%;
+                        }
                     }
                 }
             }

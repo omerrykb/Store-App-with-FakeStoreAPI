@@ -17,27 +17,27 @@ function Anasayfa({ sepet, setSepet }) {
     }, []);
 
     const SepeteEkle = (item) => {
-        
+
         urunler.forEach(element => {
             const myBtn = document.querySelector(`#BtnId-${element.id}`)
-            
+
 
             myBtn.addEventListener('click', () => {
 
-                myBtn.style.borderRadius="10rem"
-                myBtn.style.fontSize="1.1rem"
-                myBtn.style.background="white"
-                myBtn.style.opacity=".2"
-                myBtn.style.color="blue"
-                
-                
+                myBtn.style.borderRadius = "10rem"
+                myBtn.style.fontSize = "1.1rem"
+                myBtn.style.background = "white"
+                myBtn.style.opacity = ".2"
+                myBtn.style.color = "blue"
+
+
                 setTimeout(() => {
-                    myBtn.style.borderRadius=""
-                    myBtn.style.fontSize=""
-                    myBtn.style.background=""
-                    myBtn.style.opacity=""
-                    myBtn.style.color=""
-                    
+                    myBtn.style.borderRadius = ""
+                    myBtn.style.fontSize = ""
+                    myBtn.style.background = ""
+                    myBtn.style.opacity = ""
+                    myBtn.style.color = ""
+
                 }, 100);
             })
         });
@@ -45,7 +45,7 @@ function Anasayfa({ sepet, setSepet }) {
         const addFind = sepet.find(value => value.id === item.id);
         if (addFind) {
             addFind.amount += 1
-            setSepet([...sepet.filter(value => value.id !== item.id),{
+            setSepet([...sepet.filter(value => value.id !== item.id), {
                 id: item.id,
                 title: item.title,
                 image: item.image,
@@ -53,7 +53,7 @@ function Anasayfa({ sepet, setSepet }) {
                 amount: addFind.amount
             }])
         } else {
-            setSepet([...sepet,{
+            setSepet([...sepet, {
                 id: item.id,
                 title: item.title,
                 image: item.image,
@@ -64,7 +64,7 @@ function Anasayfa({ sepet, setSepet }) {
 
 
     }
-    
+
 
     useEffect(() => {
         console.log('Sepet güncellendi:', sepet);
@@ -77,7 +77,11 @@ function Anasayfa({ sepet, setSepet }) {
                     {urunler.map(urun => (
                         <Col md="3" className='mt-5'>
                             <Card className='border-2 border-primary-subtle shadow bg-light'>
-                                <Card.Header className='shadow bg-white'><Link to={`products/${urun.id}`} className='text-decoration-none text-reset'><img src={urun.image} className='justify-self-center' /></Link></Card.Header>
+                                <Card.Header className='shadow bg-white'>
+                                    <Link to={`products/${urun.id}`} className='text-decoration-none text-reset'>
+                                        <img src={urun.image} className='justify-self-center' />
+                                    </Link>
+                                </Card.Header>
                                 <Card.Body>
                                     <Card.Title className='fw-semibold'>{urun.title}</Card.Title>
                                     <Card.Text className='description'>{urun.description}</Card.Text>
