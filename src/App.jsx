@@ -1,4 +1,5 @@
 import './App.scss';
+import React, { useState, useEffect } from 'react';
 import { Nav, Navbar, NavDropdown, Container } from "react-bootstrap";
 import { TbShoppingCartCode } from "react-icons/tb";
 import { BsTwitterX } from "react-icons/bs";
@@ -12,10 +13,14 @@ import Anasayfa from './packages/Anasayfa/Anasayfa';
 import Hakkimizda from './packages/Hakkimizda/Hakkimizda';
 import UrunDetay from './packages/UrunDetay/UrunDetay';
 import { GrBasket } from "react-icons/gr";
-import Sepet from './packages/Sepet/Sepet';
+import  Sepet  from "./packages/Sepet/Sepet";
+
 
 
 function App() {
+
+  const [sepet,setSepet] = useState([])
+
   return (
     <div className="App bg-body-secondary">
 
@@ -40,8 +45,8 @@ function App() {
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
-          <Link to={"/Sepet"} className='text-decoration-none text-reset me-4' >
-          <div className="sepet bg-body-secondary me-5 shadow"><GrBasket /></div>
+          <Link to={"/Sepet"} className='m-auto text-decoration-none text-reset me-4' >
+            <div className="sepet bg-body-secondary me-5 shadow"><GrBasket /></div>
 
           </Link>
         </Container>
@@ -49,17 +54,13 @@ function App() {
 
 
 
-
-
-
-
-
       <Routes>
 
-        <Route exact path='/' element={<Anasayfa />} />
+        <Route exact path='/' element={<Anasayfa sepet={sepet} setSepet={setSepet} />} />
         <Route exact path='/Hakkimizda' element={<Hakkimizda />} />
-        <Route exact path="/products/:UrunId" element={<UrunDetay />} />
-        <Route exact path="/Sepet" element={<Sepet />} />
+        <Route exact path="/products/:UrunId" element={<UrunDetay sepet={sepet} setSepet={setSepet}/>} />
+        <Route exact path="/Sepet" element={<Sepet sepet={sepet} setSepet={setSepet} />} />
+       
 
       </Routes>
 

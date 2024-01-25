@@ -6,7 +6,7 @@ import "./AnasayfaStyle.scss"
 
 
 
-function Anasayfa() {
+function Anasayfa({ sepet, setSepet }) {
     const [urunler, setUrunler] = useState([]);
 
     useEffect(() => {
@@ -16,13 +16,59 @@ function Anasayfa() {
             .catch(error => console.error('Veri çekme hatası:', error));
     }, []);
 
-    const [Sepet, setSepet] = useState([])
-    const SepeteEkle = (tiklananUrun) => {
-        setSepet((oncekiSepet) => [...oncekiSepet, tiklananUrun]);
-      };
+    const SepeteEkle = (item) => {
+        
+        urunler.forEach(element => {
+            const myBtn = document.querySelector(`#BtnId-${element.id}`)
+            
+
+            myBtn.addEventListener('click', () => {
+
+                myBtn.style.borderRadius="10rem"
+                myBtn.style.fontSize="1.1rem"
+                myBtn.style.background="white"
+                myBtn.style.opacity=".2"
+                myBtn.style.color="blue"
+                
+                
+                setTimeout(() => {
+                    myBtn.style.borderRadius=""
+                    myBtn.style.fontSize=""
+                    myBtn.style.background=""
+                    myBtn.style.opacity=""
+                    myBtn.style.color=""
+                    
+                }, 100);
+            })
+        });
+
+        const addFind = sepet.find(value => value.id === item.id);
+        if (addFind) {
+            addFind.amount += 1
+            setSepet([...sepet.filter(value => value.id !== item.id),{
+                id: item.id,
+                title: item.title,
+                image: item.image,
+                price: item.price,
+                amount: addFind.amount
+            }])
+        } else {
+            setSepet([...sepet,{
+                id: item.id,
+                title: item.title,
+                image: item.image,
+                price: item.price,
+                amount: 1
+            }])
+        }
+
+
+    }
+    
+
     useEffect(() => {
-        console.log('Sepet güncellendi:', Sepet);
-    }, [Sepet]);
+        console.log('Sepet güncellendi:', sepet);
+    }, [sepet]);
 
     return (
         <div>
@@ -39,7 +85,7 @@ function Anasayfa() {
                                 <Card.Footer className='d-flex justify-content-between flex-column shadow'>
                                     <Card.Text id='fiyat' className='fw-bold text-center'>{((urun.price) * 11).toFixed(2)} ₺</Card.Text>
                                     <Link to={`products/${urun.id}`} className='text-decoration-none text-reset'><button className="btn btn-outline-success mt-2 shadow">İncele</button></Link>
-                                    <button className="btn btn-outline-secondary mt-2 shadow" id={`SepetUrunId${urun.id}`} onClick={() => SepeteEkle(urun)}>Sepete Ekle</button>
+                                    <button id={`BtnId-${urun.id}`} className="btn btn-outline-primary mt-2 shadow tiklamaAnimasyonu" onClick={() => SepeteEkle(urun)}>Sepete Ekle</button>
 
                                 </Card.Footer>
                             </Card>

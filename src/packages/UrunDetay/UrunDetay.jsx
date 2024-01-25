@@ -5,7 +5,7 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 import { TbShoppingCartCode } from "react-icons/tb";
 import { GiReturnArrow } from "react-icons/gi";
 
-function UrunDetay() {
+function UrunDetay({ sepet, setSepet }) {
     const { UrunId } = useParams()
     const [Urun, setUrun] = useState([])
     useEffect(() => {
@@ -15,6 +15,55 @@ function UrunDetay() {
         console.log(Urun)
 
     }, [UrunId])
+
+    const SepeteEkle = (item) => {
+        setSepet([...sepet, item])
+
+        const SepeteEkleBtn = document.querySelector('.tiklamaAnimasyonu')
+
+        SepeteEkleBtn.style.borderRadius = "5rem"
+        SepeteEkleBtn.style.fontSize = "1.2rem"
+        SepeteEkleBtn.style.background = "white"
+        SepeteEkleBtn.style.opacity = ".2"
+        SepeteEkleBtn.style.color = "blue"
+
+
+        setTimeout(() => {
+            SepeteEkleBtn.style.borderRadius = ""
+            SepeteEkleBtn.style.fontSize = ""
+            SepeteEkleBtn.style.background = ""
+            SepeteEkleBtn.style.opacity = ""
+            SepeteEkleBtn.style.color = "";
+
+        }, 100);
+
+
+        const addFind = sepet.find(value => value.id === item.id);
+        if (addFind) {
+            addFind.amount += 1
+            setSepet([...sepet.filter(value => value.id !== item.id),{
+                id: item.id,
+                title: item.title,
+                image: item.image,
+                price: item.price,
+                amount: addFind.amount
+            }])
+        } else {
+            setSepet([...sepet,{
+                id: item.id,
+                title: item.title,
+                image: item.image,
+                price: item.price,
+                amount: 1
+            }])
+        }
+    }
+
+    useEffect(() => {
+        console.log('Sepet güncellendi:', sepet);
+    }, [sepet]);
+
+
 
     return (
         <>
@@ -37,8 +86,8 @@ function UrunDetay() {
 
                     <Col md={4} className=''>
                         <Card.Footer>
-                            <button className="btn btn-outline-secondary mb-2 shadow fw-semibold">Sepete Ekle<TbShoppingCartCode className='Icon-1 text-primary' /></button>
-                            <Link to="/" className='text-decoration-none text-reset '><button className="btn btn-outline-danger mt-2 shadow fw-semibold">Geri Dön <GiReturnArrow className='Icon-2'/></button></Link>
+                            <button className="btn btn-outline-primary mb-2 shadow fw-semibold tiklamaAnimasyonu" onClick={() => SepeteEkle(Urun)}>Sepete Ekle<TbShoppingCartCode className='Icon-1 text-primary' /></button>
+                            <Link to="/" className='text-decoration-none text-reset '><button className="btn btn-outline-danger mt-2 shadow fw-semibold">Geri Dön <GiReturnArrow className='Icon-2' /></button></Link>
                         </Card.Footer>
                     </Col>
 

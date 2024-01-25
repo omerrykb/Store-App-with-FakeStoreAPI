@@ -1,0 +1,39 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap');
+
+.container-md{
+    .row{
+        @media screen and (max-width:800px) {
+            min-height: 80vh;
+        }
+        h1{
+            
+            font-family: 'Rubik Burned', system-ui;
+            width: 100%;
+            text-shadow: 0px 2px 0 rgb(0, 0, 0);
+        }
+        .col-md-3{
+            .card{
+                border-radius: 1rem;
+                .sepet-card-header{
+                    width: 50%;
+                    .myImg{
+                        max-width: 100%;
+                        
+                    }
+                }
+                .card-body{
+                    .card-title{
+                        font-size: 20px;
+                    }
+                }
+                .card-footer{
+                    border-radius: 1rem;
+                    .card-text{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
